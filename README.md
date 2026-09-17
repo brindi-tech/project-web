@@ -10,5 +10,5 @@ portfolio/
 │   └── main.js
 │
 └── images/
-    ├── eu.png
-    └── colega.png
+    ├── colega1.png
+    └── colega2.png
