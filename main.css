@@ -2,6 +2,7 @@
     box-sizing: border-box;
 }
 
+
 body {
     margin: 0;
     padding: 0;
@@ -9,7 +10,12 @@ body {
     font-family: 'Segoe UI', sans-serif;
 
     background:
-        radial-gradient(circle at center, #1c1c1c 0%, #080808 60%, #000 100%);
+        radial-gradient(
+            circle at center,
+            #1c1c1c 0%,
+            #080808 60%,
+            #000 100%
+        );
 
     color: white;
 
@@ -18,7 +24,7 @@ body {
 
 
 /* =========================
-   NAVBAR
+NAVBAR
 ========================= */
 
 .navbar {
@@ -33,30 +39,54 @@ body {
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
+
 .logo {
     font-size: 22px;
     font-weight: bold;
 }
 
+
 .logo span {
     color: #d6a53c;
 }
+
 
 .nav-links {
     display: flex;
     gap: 40px;
 }
 
+
 .nav-links a {
     color: white;
+
     text-decoration: none;
 
     transition: 0.3s;
 }
 
+
 .nav-links a:hover {
     color: #d6a53c;
 }
+
+
+
+/* =========================
+   CHECKBOX
+========================= */
+
+/*
+   O checkbox controla toda a moeda.
+
+   Ele fica invisível, mas continua
+   funcional.
+*/
+
+#coin-toggle {
+    display: none;
+}
+
 
 
 /* =========================
@@ -84,6 +114,7 @@ body {
     margin-bottom: 30px;
 }
 
+
 .hero-title p {
     color: #d6a53c;
 
@@ -91,6 +122,7 @@ body {
 
     font-size: 13px;
 }
+
 
 .hero-title h1 {
     font-size: 55px;
@@ -100,6 +132,7 @@ body {
     letter-spacing: 4px;
 }
 
+
 .hero-title span {
     color: #d6a53c;
 
@@ -107,6 +140,7 @@ body {
 
     letter-spacing: 8px;
 }
+
 
 
 /* =========================
@@ -129,12 +163,26 @@ body {
 
     position: relative;
 
+    display: block;
+
     transform-style: preserve-3d;
 
-    transition: transform 1.2s cubic-bezier(.4, .2, .2, 1);
+    transition:
+        transform 1.2s cubic-bezier(.4, .2, .2, 1);
 
     cursor: pointer;
 }
+
+
+/*
+   Quando o checkbox estiver marcado,
+   a moeda gira 180 graus.
+*/
+
+#coin-toggle:checked ~ .hero .coin {
+    transform: rotateY(180deg);
+}
+
 
 
 /* =========================
@@ -158,10 +206,12 @@ body {
     justify-content: center;
 
     background:
-        radial-gradient(circle,
+        radial-gradient(
+            circle,
             #d7aa45 0%,
             #a8751e 55%,
-            #5e3c0b 100%);
+            #5e3c0b 100%
+        );
 
     border: 12px solid #b8862c;
 
@@ -170,6 +220,7 @@ body {
         0 0 40px rgba(214, 165, 60, 0.5),
         inset 0 0 30px rgba(0, 0, 0, 0.6);
 }
+
 
 
 /* =========================
@@ -233,6 +284,7 @@ body {
 }
 
 
+
 /* =========================
    SEGUNDA FACE
 ========================= */
@@ -241,6 +293,7 @@ body {
 
     transform: rotateY(180deg);
 }
+
 
 
 /* =========================
@@ -257,6 +310,7 @@ body {
 
     letter-spacing: 2px;
 }
+
 
 
 /* =========================
@@ -281,15 +335,57 @@ body {
 }
 
 
-#profile-name {
+/*
+   Por defeito aparece o meu perfil.
+*/
+
+.profile-me {
+    display: block;
+}
+
+
+.profile-colleague {
+    display: none;
+}
+
+
+/*
+   Quando a moeda estiver virada,
+   desaparece o meu perfil e aparece
+   o perfil do colega.
+*/
+
+#coin-toggle:checked ~ .profile-section .profile-me {
+    display: none;
+}
+
+
+#coin-toggle:checked ~ .profile-section .profile-colleague {
+    display: block;
+}
+
+
+
+/* =========================
+   NOME
+========================= */
+
+.profile-name {
 
     font-size: 40px;
 
     color: #d6a53c;
+
+    margin-bottom: 20px;
 }
 
 
-#profile-description {
+
+/* =========================
+   DESCRIÇÃO
+========================= */
+
+.profile-description {
 
     color: #bbb;
 
@@ -298,6 +394,11 @@ body {
     line-height: 1.7;
 }
 
+
+
+/* =========================
+   INFORMAÇÕES
+========================= */
 
 .profile-info {
 
@@ -341,6 +442,7 @@ body {
 }
 
 
+
 /* =========================
    RESPONSIVO
 ========================= */
@@ -351,11 +453,13 @@ body {
         display: none;
     }
 
+
     .coin-container {
 
         width: 260px;
         height: 260px;
     }
+
 
     .coin-border img {
 
@@ -363,13 +467,16 @@ body {
         height: 110px;
     }
 
+
     .hero-title h1 {
 
         font-size: 38px;
     }
 
+
     .profile-info {
 
         flex-direction: column;
     }
+
 }
