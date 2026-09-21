@@ -32,34 +32,6 @@ body {
 }
 
 /* =========================
-   BARRA DE TOPO
-========================= */
-
-.top-bar {
-    background: #000;
-    padding: 8px 7%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.social-icons a {
-    color: #d6a53c;
-    margin-right: 15px;
-    font-size: 20px;
-    transition: 0.3s;
-}
-
-.social-icons a:hover {
-    color: white;
-}
-
-.top-text {
-    color: #ccc;
-    font-size: 14px;
-    letter-spacing: 2px;
-}
-/* =========================
    NAVBAR
 ========================= */
 
