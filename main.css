@@ -3,6 +3,15 @@
 }
 
 
+/* =========================
+   BODY
+========================= */
+
+html {
+    scroll-behavior: smooth;
+}
+
+
 body {
     margin: 0;
     padding: 0;
@@ -24,7 +33,7 @@ body {
 
 
 /* =========================
-NAVBAR
+   NAVBAR
 ========================= */
 
 .navbar {
@@ -37,6 +46,9 @@ NAVBAR
     padding: 0 7%;
 
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+
+    position: relative;
+    z-index: 10;
 }
 
 
@@ -62,7 +74,7 @@ NAVBAR
 
     text-decoration: none;
 
-    transition: 0.3s;
+    transition: color 0.3s ease;
 }
 
 
@@ -71,22 +83,20 @@ NAVBAR
 }
 
 
-
 /* =========================
    CHECKBOX
 ========================= */
 
 /*
-   O checkbox controla toda a moeda.
+   O checkbox já não controla
+   diretamente a rotação.
 
-   Ele fica invisível, mas continua
-   funcional.
+   O JavaScript controla a moeda.
 */
 
 #coin-toggle {
     display: none;
 }
-
 
 
 /* =========================
@@ -102,16 +112,19 @@ NAVBAR
     align-items: center;
     justify-content: center;
 
-    perspective: 1200px;
-
     overflow: hidden;
+
+    position: relative;
 }
 
 
 .hero-title {
     text-align: center;
 
-    margin-bottom: 30px;
+    margin-bottom: 35px;
+
+    position: relative;
+    z-index: 2;
 }
 
 
@@ -121,6 +134,8 @@ NAVBAR
     letter-spacing: 5px;
 
     font-size: 13px;
+
+    margin-bottom: 5px;
 }
 
 
@@ -142,74 +157,109 @@ NAVBAR
 }
 
 
+/* =========================
+   CONTAINER DA MOEDA
+========================= */
+
+.coin-container {
+    width: 330px;
+    height: 330px;
+
+    position: relative;
+
+    /*
+       A perspectiva deve estar no
+       elemento que contém a moeda.
+    */
+    perspective: 1200px;
+
+    z-index: 2;
+}
+
 
 /* =========================
    MOEDA
 ========================= */
 
-.coin-container {
-
-    width: 330px;
-    height: 330px;
-
-    perspective: 1200px;
-}
-
-
 .coin {
-
     width: 100%;
     height: 100%;
 
     position: relative;
 
-    display: block;
+    cursor: pointer;
 
+    /*
+       Permite que as duas faces
+       existam no mesmo espaço 3D.
+    */
     transform-style: preserve-3d;
 
-    transition:
-        transform 1.2s cubic-bezier(.4, .2, .2, 1);
+    /*
+       IMPORTANTE:
+       O JavaScript vai alterar
+       diretamente o transform.
+    */
+    transform: rotateY(0deg);
 
-    cursor: pointer;
+    /*
+       Uma única animação longa e suave.
+    */
+    transition: transform 2.5s cubic-bezier(0.25, 0.1, 0.25, 1);
+
+    /*
+       Evita que o browser tente
+       selecionar a moeda como texto.
+    */
+    user-select: none;
+
+    /*
+       Melhora a renderização 3D.
+    */
+    will-change: transform;
 }
-
-
-/*
-   Quando o checkbox estiver marcado,
-   a moeda gira 180 graus.
-*/
-
-#coin-toggle:checked ~ .hero .coin {
-    transform: rotateY(180deg);
-}
-
 
 
 /* =========================
-   FACES
+   FACES DA MOEDA
 ========================= */
 
 .coin-face {
-
     position: absolute;
+
+    top: 0;
+    left: 0;
 
     width: 100%;
     height: 100%;
 
     border-radius: 50%;
 
-    backface-visibility: hidden;
-
     display: flex;
 
     align-items: center;
     justify-content: center;
 
+    /*
+       Esconde a face quando
+       está virada para trás.
+    */
+    backface-visibility: hidden;
+
+    -webkit-backface-visibility: hidden;
+
+    /*
+       Cada face permanece
+       no seu próprio espaço 3D.
+    */
+    transform-style: preserve-3d;
+
     background:
         radial-gradient(
-            circle,
-            #d7aa45 0%,
-            #a8751e 55%,
+            circle at 35% 30%,
+            #e8c467 0%,
+            #d7aa45 25%,
+            #a8751e 65%,
             #5e3c0b 100%
         );
 
@@ -222,13 +272,38 @@ NAVBAR
 }
 
 
+/* =========================
+   BRILHO DA MOEDA
+========================= */
+
+.coin-face::before {
+    content: "";
+
+    position: absolute;
+
+    top: 8%;
+    left: 12%;
+
+    width: 35%;
+    height: 20%;
+
+    border-radius: 50%;
+
+    background: rgba(255, 255, 255, 0.18);
+
+    transform: rotate(-25deg);
+
+    filter: blur(5px);
+
+    pointer-events: none;
+}
+
 
 /* =========================
    INTERIOR DA MOEDA
 ========================= */
 
 .coin-border {
-
     width: 85%;
     height: 85%;
 
@@ -246,11 +321,14 @@ NAVBAR
     text-align: center;
 
     background: rgba(0, 0, 0, 0.2);
+
+    position: relative;
+
+    z-index: 2;
 }
 
 
 .coin-border img {
-
     width: 150px;
     height: 150px;
 
@@ -261,11 +339,16 @@ NAVBAR
     border: 3px solid #f3cf75;
 
     margin-bottom: 15px;
+
+    /*
+       Impede a imagem de sair
+       da área circular.
+    */
+    display: block;
 }
 
 
 .coin-border h2 {
-
     margin: 0;
 
     font-size: 18px;
@@ -275,14 +358,14 @@ NAVBAR
 
 
 .coin-border p {
-
     font-size: 10px;
 
     letter-spacing: 2px;
 
     margin-top: 5px;
-}
 
+    margin-bottom: 0;
+}
 
 
 /* =========================
@@ -290,10 +373,8 @@ NAVBAR
 ========================= */
 
 .coin-back {
-
     transform: rotateY(180deg);
 }
-
 
 
 /* =========================
@@ -301,7 +382,6 @@ NAVBAR
 ========================= */
 
 .coin-instruction {
-
     margin-top: 25px;
 
     color: #aaa;
@@ -309,8 +389,13 @@ NAVBAR
     font-size: 13px;
 
     letter-spacing: 2px;
-}
 
+    text-align: center;
+
+    position: relative;
+
+    z-index: 2;
+}
 
 
 /* =========================
@@ -318,7 +403,6 @@ NAVBAR
 ========================= */
 
 .profile-section {
-
     padding: 100px 10%;
 
     background: #080808;
@@ -328,7 +412,6 @@ NAVBAR
 
 
 #profile-content {
-
     max-width: 900px;
 
     margin: auto;
@@ -336,7 +419,19 @@ NAVBAR
 
 
 /*
-   Por defeito aparece o meu perfil.
+   Os dois perfis começam
+   escondidos.
+*/
+
+.profile {
+    display: none;
+
+    animation: profileAppear 0.5s ease forwards;
+}
+
+
+/*
+   O perfil inicial.
 */
 
 .profile-me {
@@ -344,26 +439,23 @@ NAVBAR
 }
 
 
-.profile-colleague {
-    display: none;
+/* =========================
+   ANIMAÇÃO DO PERFIL
+========================= */
+
+@keyframes profileAppear {
+    from {
+        opacity: 0;
+
+        transform: translateY(15px);
+    }
+
+    to {
+        opacity: 1;
+
+        transform: translateY(0);
+    }
 }
-
-
-/*
-   Quando a moeda estiver virada,
-   desaparece o meu perfil e aparece
-   o perfil do colega.
-*/
-
-#coin-toggle:checked ~ .profile-section .profile-me {
-    display: none;
-}
-
-
-#coin-toggle:checked ~ .profile-section .profile-colleague {
-    display: block;
-}
-
 
 
 /* =========================
@@ -371,7 +463,6 @@ NAVBAR
 ========================= */
 
 .profile-name {
-
     font-size: 40px;
 
     color: #d6a53c;
@@ -380,13 +471,11 @@ NAVBAR
 }
 
 
-
 /* =========================
    DESCRIÇÃO
 ========================= */
 
 .profile-description {
-
     color: #bbb;
 
     font-size: 18px;
@@ -395,13 +484,11 @@ NAVBAR
 }
 
 
-
 /* =========================
    INFORMAÇÕES
 ========================= */
 
 .profile-info {
-
     display: flex;
 
     justify-content: center;
@@ -413,7 +500,6 @@ NAVBAR
 
 
 .profile-info div {
-
     padding: 25px;
 
     background: #111;
@@ -423,11 +509,21 @@ NAVBAR
     border-radius: 12px;
 
     min-width: 200px;
+
+    transition:
+        transform 0.3s ease,
+        border-color 0.3s ease;
+}
+
+
+.profile-info div:hover {
+    transform: translateY(-5px);
+
+    border-color: #d6a53c;
 }
 
 
 .profile-info strong {
-
     display: block;
 
     color: #d6a53c;
@@ -437,10 +533,8 @@ NAVBAR
 
 
 .profile-info span {
-
     color: #aaa;
 }
-
 
 
 /* =========================
@@ -449,34 +543,136 @@ NAVBAR
 
 @media (max-width: 768px) {
 
+    .navbar {
+        height: 70px;
+
+        justify-content: center;
+    }
+
+
     .nav-links {
         display: none;
     }
 
 
-    .coin-container {
-
-        width: 260px;
-        height: 260px;
+    .logo {
+        font-size: 19px;
     }
 
 
-    .coin-border img {
+    .hero {
+        min-height: calc(100vh - 70px);
 
-        width: 110px;
-        height: 110px;
+        padding: 40px 20px;
+    }
+
+
+    .hero-title {
+        margin-bottom: 30px;
+    }
+
+
+    .hero-title p {
+        font-size: 11px;
+
+        letter-spacing: 3px;
     }
 
 
     .hero-title h1 {
-
         font-size: 38px;
+
+        letter-spacing: 3px;
+    }
+
+
+    .hero-title span {
+        font-size: 14px;
+
+        letter-spacing: 5px;
+    }
+
+
+    .coin-container {
+        width: 260px;
+        height: 260px;
+
+        perspective: 1000px;
+    }
+
+
+    .coin-border img {
+        width: 110px;
+        height: 110px;
+
+        margin-bottom: 10px;
+    }
+
+
+    .coin-border h2 {
+        font-size: 14px;
+
+        letter-spacing: 1px;
+    }
+
+
+    .coin-border p {
+        font-size: 8px;
+
+        letter-spacing: 1px;
+    }
+
+
+    .coin-face {
+        border-width: 9px;
+    }
+
+
+    .profile-section {
+        padding: 70px 20px;
+    }
+
+
+    .profile-name {
+        font-size: 30px;
+    }
+
+
+    .profile-description {
+        font-size: 16px;
     }
 
 
     .profile-info {
-
         flex-direction: column;
+
+        align-items: stretch;
     }
 
+
+    .profile-info div {
+        min-width: 0;
+    }
+}
+
+
+/* =========================
+   REDUZIR ANIMAÇÕES
+========================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    html {
+        scroll-behavior: auto;
+    }
+
+
+    .coin {
+        transition: none;
+    }
+
+
+    .profile {
+        animation: none;
+    }
 }
