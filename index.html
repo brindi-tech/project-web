@@ -2,46 +2,57 @@
 <html lang="pt">
 
 <head>
-
     <title>Our Portfolio</title>
 
     <meta charset="utf-8">
 
-    <meta name="viewport"
-        content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    >
 
-
-    <!-- Bootstrap CSS -->
+    <!-- =========================
+         BOOTSTRAP CSS
+    ========================== -->
 
     <link
         href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
         rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
-        crossorigin="anonymous">
+        crossorigin="anonymous"
+    >
 
-
-    <!-- Bootstrap Icons -->
+    <!-- =========================
+         BOOTSTRAP ICONS
+    ========================== -->
 
     <link
         rel="stylesheet"
-        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    >
 
-
-    <!-- Google Fonts -->
+    <!-- =========================
+         GOOGLE FONTS
+    ========================== -->
 
     <link
         href="https://fonts.googleapis.com/css?family=Kalam&display=swap"
-        rel="stylesheet">
+        rel="stylesheet"
+    >
 
-
-    <!-- Main CSS -->
+    <!-- =========================
+         MAIN CSS
+    ========================== -->
 
     <link rel="stylesheet" href="css/main.css">
-
 </head>
 
 
 <body>
+
+    <!-- =========================
+         NAVBAR
+    ========================== -->
 
     <header>
 
@@ -54,11 +65,25 @@
 
             <div class="nav-links">
 
-                <a href="#inicio">Início</a>
-                <a href="#sobre">Sobre Nós</a>
-                <a href="#competencias">Competências</a>
-                <a href="#projetos">Projetos</a>
-                <a href="#contactos">Contactos</a>
+                <a href="#inicio">
+                    Início
+                </a>
+
+                <a href="#sobre">
+                    Sobre Nós
+                </a>
+
+                <a href="#competencias">
+                    Competências
+                </a>
+
+                <a href="#projetos">
+                    Projetos
+                </a>
+
+                <a href="#contactos">
+                    Contactos
+                </a>
 
             </div>
 
@@ -67,44 +92,56 @@
     </header>
 
 
+    <!-- =========================
+         MAIN
+    ========================== -->
+
     <main>
 
 
         <!-- =========================
-             CONTROLO DA MOEDA
-        ========================= -->
-
-        <input type="checkbox" id="coin-toggle">
-
-
-        <!-- =========================
              HERO
-        ========================= -->
+        ========================== -->
 
         <section id="inicio" class="hero">
 
 
+            <!-- TÍTULO -->
+
             <div class="hero-title">
 
-                <p>DOIS PROGRAMADORES</p>
+                <p>
+                    DOIS PROGRAMADORES
+                </p>
 
-                <h1>DUAS FACES.</h1>
+                <h1>
+                    DUAS FACES.
+                </h1>
 
-                <span>UMA HISTÓRIA.</span>
+                <span>
+                    UMA HISTÓRIA.
+                </span>
 
             </div>
 
 
+            <!-- =========================
+                 MOEDA
+            ========================== -->
+
             <div class="coin-container">
 
-                <!--
-                    O label funciona como botão.
-                    Ao clicar na moeda, altera o checkbox.
-                -->
+                <div
+                    class="coin"
+                    role="button"
+                    tabindex="0"
+                    aria-label="Virar moeda"
+                >
 
-                <label for="coin-toggle" class="coin">
 
-                    <!-- MINHA FACE -->
+                    <!-- =========================
+                         MINHA FACE
+                    ========================== -->
 
                     <div class="coin-face coin-front">
 
@@ -112,9 +149,12 @@
 
                             <img
                                 src="images/eu.png"
-                                alt="Minha fotografia">
+                                alt="Minha fotografia"
+                            >
 
-                            <h2>O MEU NOME</h2>
+                            <h2>
+                                O MEU NOME
+                            </h2>
 
                             <p>
                                 ESTUDANTE • PROGRAMADOR
@@ -125,7 +165,9 @@
                     </div>
 
 
-                    <!-- FACE DO COLEGA -->
+                    <!-- =========================
+                         FACE DO COLEGA
+                    ========================== -->
 
                     <div class="coin-face coin-back">
 
@@ -133,9 +175,12 @@
 
                             <img
                                 src="images/colega.png"
-                                alt="Fotografia do meu colega">
+                                alt="Fotografia do meu colega"
+                            >
 
-                            <h2>NOME DO COLEGA</h2>
+                            <h2>
+                                NOME DO COLEGA
+                            </h2>
 
                             <p>
                                 ESTUDANTE • PROGRAMADOR
@@ -145,10 +190,12 @@
 
                     </div>
 
-                </label>
+                </div>
 
             </div>
 
+
+            <!-- INSTRUÇÃO -->
 
             <p class="coin-instruction">
                 Clique na moeda para virar
@@ -158,26 +205,25 @@
         </section>
 
 
-
         <!-- =========================
              PERFIL
-        ========================= -->
+        ========================== -->
 
-        <section class="profile-section">
-
-
-            <!-- PERFIL -->
+        <section id="sobre" class="profile-section">
 
             <div id="profile-content">
 
 
-                <!-- INFORMAÇÃO SOBRE MIM -->
+                <!-- =========================
+                     MEU PERFIL
+                ========================== -->
 
                 <div class="profile profile-me">
 
                     <h2 class="profile-name">
                         O MEU NOME
                     </h2>
+
 
                     <p class="profile-description">
                         Aqui aparece toda a informação sobre mim.
@@ -187,9 +233,13 @@
                     <div class="profile-info">
 
 
+                        <!-- CURSO -->
+
                         <div>
 
-                            <strong>Curso</strong>
+                            <strong>
+                                Curso
+                            </strong>
 
                             <span>
                                 Engenharia Informática e Multimédia
@@ -198,9 +248,13 @@
                         </div>
 
 
+                        <!-- INTERESSES -->
+
                         <div>
 
-                            <strong>Interesses</strong>
+                            <strong>
+                                Interesses
+                            </strong>
 
                             <span>
                                 Programação, jogos e tecnologia
@@ -209,9 +263,13 @@
                         </div>
 
 
+                        <!-- COMPETÊNCIAS -->
+
                         <div>
 
-                            <strong>Competências</strong>
+                            <strong>
+                                Competências
+                            </strong>
 
                             <span>
                                 Java, HTML, CSS, Unity
@@ -225,14 +283,16 @@
                 </div>
 
 
-
-                <!-- INFORMAÇÃO SOBRE O COLEGA -->
+                <!-- =========================
+                     PERFIL DO COLEGA
+                ========================== -->
 
                 <div class="profile profile-colleague">
 
                     <h2 class="profile-name">
                         NOME DO COLEGA
                     </h2>
+
 
                     <p class="profile-description">
                         Aqui aparece toda a informação sobre o meu colega.
@@ -242,9 +302,13 @@
                     <div class="profile-info">
 
 
+                        <!-- CURSO -->
+
                         <div>
 
-                            <strong>Curso</strong>
+                            <strong>
+                                Curso
+                            </strong>
 
                             <span>
                                 Engenharia Informática e Multimédia
@@ -253,9 +317,13 @@
                         </div>
 
 
+                        <!-- INTERESSES -->
+
                         <div>
 
-                            <strong>Interesses</strong>
+                            <strong>
+                                Interesses
+                            </strong>
 
                             <span>
                                 Programação, tecnologia e jogos
@@ -264,9 +332,13 @@
                         </div>
 
 
+                        <!-- COMPETÊNCIAS -->
+
                         <div>
 
-                            <strong>Competências</strong>
+                            <strong>
+                                Competências
+                            </strong>
 
                             <span>
                                 Java, HTML, CSS, Unity
@@ -285,7 +357,201 @@
         </section>
 
 
+        <!-- =========================
+             COMPETÊNCIAS
+        ========================== -->
+
+        <section id="competencias" class="profile-section">
+
+            <h2 class="profile-name">
+                COMPETÊNCIAS
+            </h2>
+
+        </section>
+
+
+        <!-- =========================
+             PROJETOS
+        ========================== -->
+
+        <section id="projetos" class="profile-section">
+
+            <h2 class="profile-name">
+                PROJETOS
+            </h2>
+
+        </section>
+
+
+        <!-- =========================
+             CONTACTOS
+        ========================== -->
+
+        <section id="contactos" class="profile-section">
+
+            <h2 class="profile-name">
+                CONTACTOS
+            </h2>
+
+        </section>
+
+
     </main>
+
+
+    <!-- =========================
+         JAVASCRIPT
+    ========================== -->
+
+    <script>
+
+        /*
+         * ELEMENTOS
+         */
+
+        const coin = document.querySelector(".coin");
+
+        const profileMe =
+            document.querySelector(".profile-me");
+
+        const profileColleague =
+            document.querySelector(".profile-colleague");
+
+
+        /*
+         * ESTADO DA MOEDA
+         */
+
+        let rotation = 0;
+
+        let showingMe = true;
+
+        let isFlipping = false;
+
+
+        /*
+         * VIRAR A MOEDA
+         */
+
+        function runCoinFlipSequence() {
+
+            /*
+             * Impede clicar novamente
+             * enquanto a animação está
+             * a decorrer.
+             */
+
+            if (isFlipping) {
+                return;
+            }
+
+
+            isFlipping = true;
+
+
+            /*
+             * 5 voltas completas:
+             *
+             * 5 × 360 = 1800°
+             *
+             * + 180° para mostrar
+             * a outra face.
+             *
+             * Total = 1980°
+             */
+
+            rotation += 1980;
+
+
+            /*
+             * Aplica a rotação.
+             */
+
+            coin.style.transform =
+                `rotateY(${rotation}deg)`;
+
+
+            /*
+             * Espera que a animação
+             * termine antes de alterar
+             * o perfil.
+             */
+
+            setTimeout(function () {
+
+
+                /*
+                 * Alterna entre os dois
+                 * perfis.
+                 */
+
+                showingMe = !showingMe;
+
+
+                if (showingMe) {
+
+                    profileMe.style.display = "block";
+
+                    profileColleague.style.display = "none";
+
+                } else {
+
+                    profileMe.style.display = "none";
+
+                    profileColleague.style.display = "block";
+
+                }
+
+
+                /*
+                 * Permite uma nova
+                 * animação.
+                 */
+
+                isFlipping = false;
+
+
+            }, 2500);
+
+        }
+
+
+        /*
+         * CLIQUE NA MOEDA
+         */
+
+        coin.addEventListener(
+            "click",
+            runCoinFlipSequence
+        );
+
+
+        /*
+         * TECLADO
+         *
+         * ENTER ou ESPAÇO
+         */
+
+        coin.addEventListener(
+            "keydown",
+            function (event) {
+
+                if (
+                    event.key === "Enter" ||
+                    event.key === " "
+                ) {
+
+                    event.preventDefault();
+
+                    runCoinFlipSequence();
+
+                }
+
+            }
+        );
+
+    </script>
+
 
 </body>
 
