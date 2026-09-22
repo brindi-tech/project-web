@@ -1,34 +1,31 @@
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
-
 
 /* =========================
    BODY
 ========================= */
 
 html {
-    scroll-behavior: smooth;
+  scroll-behavior: smooth;
 }
 
-
 body {
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  padding: 0;
 
-    font-family: 'Segoe UI', sans-serif;
+  font-family: "Segoe UI", sans-serif;
 
-    background:
-        radial-gradient(
-            circle at center,
-            #1c1c1c 0%,
-            #080808 60%,
-            #000 100%
-        );
+  background: radial-gradient(
+    circle at center,
+    #1c1c1c 0%,
+    #080808 60%,
+    #000 100%
+  );
 
-    color: white;
+  color: white;
 
-    min-height: 100vh;
+  min-height: 100vh;
 }
 
 /* =========================
@@ -36,642 +33,403 @@ body {
 ========================= */
 
 .navbar {
-    height: 80px;
+  height: 80px;
 
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 
-    padding: 0 7%;
+  padding: 0 7%;
 
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 
-    position: relative;
-    z-index: 10;
+  position: relative;
+  z-index: 10;
 }
-
 
 .logo {
-    font-size: 22px;
-    font-weight: bold;
+  font-size: 22px;
+  font-weight: bold;
 }
-
 
 .logo span {
-    color: #d6a53c;
+  color: #d6a53c;
 }
-
 
 .nav-links {
-    display: flex;
-    gap: 40px;
+  display: flex;
+  gap: 40px;
 }
-
 
 .nav-links a {
-    color: white;
+  color: white;
 
-    text-decoration: none;
+  text-decoration: none;
 
-    transition: color 0.3s ease;
+  transition: color 0.3s ease;
 }
-
 
 .nav-links a:hover {
-    color: #d6a53c;
+  color: #d6a53c;
 }
-
-
-/* =========================
-   CHECKBOX
-========================= */
-
-/*
-   O checkbox já não controla
-   diretamente a rotação.
-
-   O JavaScript controla a moeda.
-*/
-
-#coin-toggle {
-    display: none;
-}
-
 
 /* =========================
    HERO
 ========================= */
 
 .hero {
-    min-height: calc(100vh - 80px);
+  min-height: calc(100vh - 80px);
 
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 
-    align-items: center;
-    justify-content: center;
+  align-items: center;
+  justify-content: center;
 
-    overflow: hidden;
+  overflow: hidden;
 
-    position: relative;
+  position: relative;
 }
-
 
 .hero-title {
-    text-align: center;
+  text-align: center;
 
-    margin-bottom: 35px;
+  margin-bottom: 35px;
 
-    position: relative;
-    z-index: 2;
+  position: relative;
+  z-index: 2;
 }
-
 
 .hero-title p {
-    color: #d6a53c;
+  color: #d6a53c;
 
-    letter-spacing: 5px;
+  letter-spacing: 5px;
 
-    font-size: 13px;
+  font-size: 13px;
 
-    margin-bottom: 5px;
+  margin-bottom: 5px;
 }
-
 
 .hero-title h1 {
-    font-size: 55px;
+  font-size: 55px;
 
-    margin: 5px 0;
+  margin: 5px 0;
 
-    letter-spacing: 4px;
+  letter-spacing: 4px;
 }
-
 
 .hero-title span {
-    color: #d6a53c;
+  color: #d6a53c;
 
-    font-size: 18px;
+  font-size: 18px;
 
-    letter-spacing: 8px;
+  letter-spacing: 8px;
 }
 
-
 /* =========================
-   CONTAINER DA MOEDA
+   MOEDAS
 ========================= */
 
-.coin-container {
-    width: 330px;
-    height: 330px;
-
-    position: relative;
-
-    /*
-       A perspectiva deve estar no
-       elemento que contém a moeda.
-    */
-    perspective: 1200px;
-
-    z-index: 2;
+.coins-container {
+  display: flex;
+  justify-content: center;
+  gap: 150px;
+  width: min(100%, 760px);
 }
 
-
-/* =========================
-   MOEDA
-========================= */
-
-.coin {
-    width: 100%;
-    height: 100%;
-
-    position: relative;
-
-    cursor: pointer;
-
-    /*
-       Permite que as duas faces
-       existam no mesmo espaço 3D.
-    */
-    transform-style: preserve-3d;
-
-    /*
-       IMPORTANTE:
-       O JavaScript vai alterar
-       diretamente o transform.
-    */
-    transform: rotateY(0deg);
-
-    /*
-       Uma única animação longa e suave.
-    */
-    transition: transform 2.5s cubic-bezier(0.25, 0.1, 0.25, 1);
-
-    /*
-       Evita que o browser tente
-       selecionar a moeda como texto.
-    */
-    user-select: none;
-
-    /*
-       Melhora a renderização 3D.
-    */
-    will-change: transform;
+.coin-card {
+  width: 300px;
+  height: 300px;
+  flex: 0 1 300px;
 }
-
-
-/* =========================
-   FACES DA MOEDA
-========================= */
 
 .coin-face {
-    position: absolute;
-
-    top: 0;
-    left: 0;
-
-    width: 100%;
-    height: 100%;
-
-    border-radius: 50%;
-
-    display: flex;
-
-    align-items: center;
-    justify-content: center;
-
-    /*
-       Esconde a face quando
-       está virada para trás.
-    */
-    backface-visibility: hidden;
-
-    -webkit-backface-visibility: hidden;
-
-    /*
-       Cada face permanece
-       no seu próprio espaço 3D.
-    */
-    transform-style: preserve-3d;
-
-    background:
-        radial-gradient(
-            circle at 35% 30%,
-            #e8c467 0%,
-            #d7aa45 25%,
-            #a8751e 65%,
-            #5e3c0b 100%
-        );
-
-    border: 12px solid #b8862c;
-
-    box-shadow:
-        0 0 0 5px #4d310d,
-        0 0 40px rgba(214, 165, 60, 0.5),
-        inset 0 0 30px rgba(0, 0, 0, 0.6);
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: radial-gradient(
+    circle at 35% 30%,
+    #e8c467 0%,
+    #d7aa45 25%,
+    #a8751e 65%,
+    #5e3c0b 100%
+  );
+  border: 12px solid #b8862c;
+  box-shadow:
+    0 0 0 5px #4d310d,
+    0 0 40px rgba(214, 165, 60, 0.5),
+    inset 0 0 30px rgba(0, 0, 0, 0.6);
 }
-
-
-/* =========================
-   BRILHO DA MOEDA
-========================= */
 
 .coin-face::before {
-    content: "";
-
-    position: absolute;
-
-    top: 8%;
-    left: 12%;
-
-    width: 35%;
-    height: 20%;
-
-    border-radius: 50%;
-
-    background: rgba(255, 255, 255, 0.18);
-
-    transform: rotate(-25deg);
-
-    filter: blur(5px);
-
-    pointer-events: none;
+  content: "";
+  position: absolute;
+  top: 8%;
+  left: 12%;
+  width: 35%;
+  height: 20%;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.18);
+  transform: rotate(-25deg);
+  filter: blur(5px);
+  pointer-events: none;
 }
-
-
-/* =========================
-   INTERIOR DA MOEDA
-========================= */
 
 .coin-border {
-    width: 85%;
-    height: 85%;
-
-    border-radius: 50%;
-
-    border: 3px solid #f3cf75;
-
-    display: flex;
-
-    flex-direction: column;
-
-    align-items: center;
-    justify-content: center;
-
-    text-align: center;
-
-    background: rgba(0, 0, 0, 0.2);
-
-    position: relative;
-
-    z-index: 2;
+  width: 85%;
+  height: 85%;
+  border-radius: 50%;
+  border: 3px solid #f3cf75;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background: rgba(0, 0, 0, 0.2);
+  position: relative;
+  z-index: 2;
 }
-
 
 .coin-border img {
-    width: 150px;
-    height: 150px;
-
-    object-fit: cover;
-
-    border-radius: 50%;
-
-    border: 3px solid #f3cf75;
-
-    margin-bottom: 15px;
-
-    /*
-       Impede a imagem de sair
-       da área circular.
-    */
-    display: block;
+  width: 135px;
+  height: 135px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 3px solid #f3cf75;
+  margin-bottom: 15px;
+  display: block;
 }
-
 
 .coin-border h2 {
-    margin: 0;
-
-    font-size: 18px;
-
-    letter-spacing: 2px;
+  margin: 0;
+  font-size: 18px;
+  letter-spacing: 2px;
 }
-
 
 .coin-border p {
-    font-size: 10px;
-
-    letter-spacing: 2px;
-
-    margin-top: 5px;
-
-    margin-bottom: 0;
+  font-size: 10px;
+  letter-spacing: 2px;
+  margin-top: 5px;
+  margin-bottom: 0;
 }
-
-
-/* =========================
-   SEGUNDA FACE
-========================= */
-
-.coin-back {
-    transform: rotateY(180deg);
-}
-
-
-/* =========================
-   INSTRUÇÃO
-========================= */
-
-.coin-instruction {
-    margin-top: 25px;
-
-    color: #aaa;
-
-    font-size: 13px;
-
-    letter-spacing: 2px;
-
-    text-align: center;
-
-    position: relative;
-
-    z-index: 2;
-}
-
 
 /* =========================
    PERFIL
 ========================= */
 
 .profile-section {
-    padding: 100px 10%;
+  padding: 100px 10%;
 
-    background: #080808;
+  background: #080808;
 
-    text-align: center;
+  text-align: center;
 }
-
 
 #profile-content {
-    max-width: 900px;
-
-    margin: auto;
+  max-width: 1200px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 30px;
 }
-
-
-/*
-   Os dois perfis começam
-   escondidos.
-*/
 
 .profile {
-    display: none;
-
-    animation: profileAppear 0.5s ease forwards;
+  display: block;
 }
-
-
-/*
-   O perfil inicial.
-*/
-
-.profile-me {
-    display: block;
-}
-
-
-/* =========================
-   ANIMAÇÃO DO PERFIL
-========================= */
-
-@keyframes profileAppear {
-    from {
-        opacity: 0;
-
-        transform: translateY(15px);
-    }
-
-    to {
-        opacity: 1;
-
-        transform: translateY(0);
-    }
-}
-
 
 /* =========================
    NOME
 ========================= */
 
 .profile-name {
-    font-size: 40px;
+  font-size: 40px;
 
-    color: #d6a53c;
+  color: #d6a53c;
 
-    margin-bottom: 20px;
+  margin-bottom: 20px;
 }
-
 
 /* =========================
    DESCRIÇÃO
 ========================= */
 
 .profile-description {
-    color: #bbb;
+  color: #bbb;
 
-    font-size: 18px;
+  font-size: 18px;
 
-    line-height: 1.7;
+  line-height: 1.7;
 }
-
 
 /* =========================
    INFORMAÇÕES
 ========================= */
 
 .profile-info {
-    display: flex;
+  display: flex;
 
-    justify-content: center;
+  justify-content: center;
 
-    gap: 20px;
+  gap: 20px;
 
-    margin-top: 40px;
+  margin-top: 40px;
 }
-
 
 .profile-info div {
-    padding: 25px;
+  padding: 25px;
 
-    background: #111;
+  background: #111;
 
-    border: 1px solid #333;
+  border: 1px solid #333;
 
-    border-radius: 12px;
+  border-radius: 12px;
 
-    min-width: 200px;
+  min-width: 200px;
 
-    transition:
-        transform 0.3s ease,
-        border-color 0.3s ease;
+  transition:
+    transform 0.3s ease,
+    border-color 0.3s ease;
 }
-
 
 .profile-info div:hover {
-    transform: translateY(-5px);
+  transform: translateY(-5px);
 
-    border-color: #d6a53c;
+  border-color: #d6a53c;
 }
-
 
 .profile-info strong {
-    display: block;
+  display: block;
 
-    color: #d6a53c;
+  color: #d6a53c;
 
-    margin-bottom: 10px;
+  margin-bottom: 10px;
 }
-
 
 .profile-info span {
-    color: #aaa;
+  color: #aaa;
 }
-
 
 /* =========================
    RESPONSIVO
 ========================= */
 
 @media (max-width: 768px) {
+  .navbar {
+    height: 70px;
 
-    .navbar {
-        height: 70px;
+    justify-content: center;
+  }
 
-        justify-content: center;
-    }
+  .nav-links {
+    display: none;
+  }
 
+  .logo {
+    font-size: 19px;
+  }
 
-    .nav-links {
-        display: none;
-    }
+  .hero {
+    min-height: calc(100vh - 70px);
 
+    padding: 40px 20px;
+  }
 
-    .logo {
-        font-size: 19px;
-    }
+  .hero-title {
+    margin-bottom: 30px;
+  }
 
+  .hero-title p {
+    font-size: 11px;
 
-    .hero {
-        min-height: calc(100vh - 70px);
+    letter-spacing: 3px;
+  }
 
-        padding: 40px 20px;
-    }
+  .hero-title h1 {
+    font-size: 38px;
 
+    letter-spacing: 3px;
+  }
 
-    .hero-title {
-        margin-bottom: 30px;
-    }
+  .hero-title span {
+    font-size: 14px;
 
+    letter-spacing: 5px;
+  }
 
-    .hero-title p {
-        font-size: 11px;
+  .coins-container {
+    gap: 25px;
+  }
 
-        letter-spacing: 3px;
-    }
+  .coin-card {
+    width: 260px;
+    height: 260px;
+    flex-basis: 260px;
+  }
 
+  .coin-border img {
+    width: 110px;
+    height: 110px;
+    margin-bottom: 10px;
+  }
 
-    .hero-title h1 {
-        font-size: 38px;
+  .coin-border h2 {
+    font-size: 14px;
+    letter-spacing: 1px;
+  }
 
-        letter-spacing: 3px;
-    }
+  .coin-border p {
+    font-size: 8px;
+    letter-spacing: 1px;
+  }
 
+  .coin-face {
+    border-width: 9px;
+  }
 
-    .hero-title span {
-        font-size: 14px;
+  .profile-section {
+    padding: 70px 20px;
+  }
 
-        letter-spacing: 5px;
-    }
+  #profile-content {
+    grid-template-columns: 1fr;
+  }
 
+  .profile-name {
+    font-size: 30px;
+  }
 
-    .coin-container {
-        width: 260px;
-        height: 260px;
+  .profile-description {
+    font-size: 16px;
+  }
 
-        perspective: 1000px;
-    }
+  .profile-info {
+    flex-direction: column;
 
+    align-items: stretch;
+  }
 
-    .coin-border img {
-        width: 110px;
-        height: 110px;
-
-        margin-bottom: 10px;
-    }
-
-
-    .coin-border h2 {
-        font-size: 14px;
-
-        letter-spacing: 1px;
-    }
-
-
-    .coin-border p {
-        font-size: 8px;
-
-        letter-spacing: 1px;
-    }
-
-
-    .coin-face {
-        border-width: 9px;
-    }
-
-
-    .profile-section {
-        padding: 70px 20px;
-    }
-
-
-    .profile-name {
-        font-size: 30px;
-    }
-
-
-    .profile-description {
-        font-size: 16px;
-    }
-
-
-    .profile-info {
-        flex-direction: column;
-
-        align-items: stretch;
-    }
-
-
-    .profile-info div {
-        min-width: 0;
-    }
+  .profile-info div {
+    min-width: 0;
+  }
 }
 
+@media (max-width: 560px) {
+  .coins-container {
+    flex-direction: column;
+    align-items: center;
+  }
+}
 
 /* =========================
    REDUZIR ANIMAÇÕES
 ========================= */
 
 @media (prefers-reduced-motion: reduce) {
-
-    html {
-        scroll-behavior: auto;
-    }
-
-
-    .coin {
-        transition: none;
-    }
-
-
-    .profile {
-        animation: none;
-    }
+  html {
+    scroll-behavior: auto;
+  }
 }
