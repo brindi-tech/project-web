@@ -72,6 +72,13 @@ body {
 .nav-links a:hover {
   color: #d6a53c;
 }
+/* =========================
+   CAROUSEL                         
+========================= */
+.carousel-item {
+  min-height: 60vh;
+  clip-path: polygon(0 0, 100% 0, 100% 85%, 0 95%);
+}
 
 /* =========================
    HERO
@@ -200,21 +207,21 @@ body {
   object-fit: cover;
   border-radius: 50%;
   border: 3px solid #f3cf75;
-  margin-bottom: 15px;
+  margin-bottom: 5px;
   display: block;
 }
 
 .coin-border h2 {
   margin: 0;
-  font-size: 18px;
+  font-size: 14px;
   letter-spacing: 2px;
 }
 
 .coin-border p {
   font-size: 10px;
   letter-spacing: 2px;
-  margin-top: 5px;
-  margin-bottom: 0;
+  margin-top: 3px;
+  margin-bottom: 5px;
 }
 
 /* =========================
@@ -420,12 +427,67 @@ body {
     min-width: 0;
   }
 }
+/* =========================
+   OBJETIVO CARD    
+   *======================== */
+.objetivo-card {
+  background: #111;
+  border: 1px solid #333;
+  border-radius: 12px;
+  transition: 0.3s ease;
+  color: white;
+}
+    .carousel-item {
+        min-height: 60vh;
+        clip-path: polygon(0 0, 100% 0, 100% 85%, 0 95%);
+    }
+
+.back-to-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    font-size: 45px;
+    color: #b8bd1c;
+    transition: 0.3s ease;
+    z-index: 999;
+}
+
+.back-to-top:hover {
+    color: #9da415;
+    transform: translateY(-5px);
+}
+
+.objetivo-card {
+    background: #111;
+    border: 1px solid #333;
+    border-radius: 12px;
+    transition: 0.3s ease;
+    color: white;
+}
+
+.objetivo-card:hover {
+    transform: translateY(-5px);
+    border-color: #d6a53c;
+}
+
+.objetivo-card:hover {
+  transform: translateY(-5px);
+  border-color: #d6a53c;
+}
 
 @media (max-width: 560px) {
   .coins-container {
     flex-direction: column;
     align-items: center;
   }
+}
+.social-nav a {
+  color: white;
+  transition: color 0.3s ease;
+}
+
+.social-nav a:hover {
+  color: #d6a53c;
 }
 
 /* =========================
@@ -436,4 +498,36 @@ body {
   html {
     scroll-behavior: auto;
   }
+
+
 }
+.btn-work {
+  background-color: #d6a53c !important;
+  color: #000 !important;
+  border: none !important;
+  font-weight: bold;
+  padding: 10px 25px;
+  transition: 0.3s ease;
+  border-radius: 6px;
+}
+
+.btn-work:hover {
+  background-color: #f3cf75 !important;
+  color: #000 !important;
+  transform: translateY(-3px);
+}
+
+
+/* =========================
+   BACK TO TOP BUTTON   
+========================= */
+.back-to-top {
+  color: #d6a53c; /* dourado principal */
+  transition: 0.3s ease;
+}
+
+.back-to-top:hover {
+  color: #f3cf75; /* dourado mais claro */
+  transform: translateY(-5px);
+}
+
