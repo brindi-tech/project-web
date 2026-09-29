@@ -81,14 +81,12 @@ body {
 }
 
 #carrossel {
-  margin-bottom: 60px; 
+  margin-bottom: 60px;
 }
-
 
 .carousel-caption {
-  bottom: 25%; 
+  bottom: 25%;
 }
-
 
 /* =========================
    HERO
@@ -334,6 +332,121 @@ body {
   color: #aaa;
 }
 
+.contact-container {
+  width: min(100%, 620px);
+  margin: 0 auto;
+}
+
+.contact-form {
+  text-align: left;
+}
+
+.contact-form .form-label {
+  color: #d6a53c;
+}
+
+.contact-form .form-control,
+.contact-form .form-select {
+  background-color: #111;
+  border-color: #444;
+  color: #fff;
+}
+
+.contact-form .form-control::placeholder {
+  color: #999;
+}
+
+.contact-form .form-control:focus,
+.contact-form .form-select:focus {
+  border-color: #d6a53c;
+  box-shadow: 0 0 0 0.2rem rgba(214, 165, 60, 0.2);
+}
+
+.contact-form .form-select option {
+  background-color: #111;
+  color: #fff;
+}
+
+.contact-btn {
+  padding: 10px 24px;
+  border: 0;
+  border-radius: 6px;
+  background-color: #d6a53c;
+  color: #000;
+  font-weight: 700;
+  cursor: pointer;
+  transition:
+    background-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.contact-btn:hover {
+  background-color: #f3cf75;
+  transform: translateY(-2px);
+}
+
+.contact-btn:focus-visible {
+  outline: 2px solid #f3cf75;
+  outline-offset: 3px;
+}
+
+.contact-socials {
+  width: min(100%, 900px);
+  margin: 64px auto 0;
+}
+
+.contact-socials-title {
+  margin-bottom: 24px;
+  color: #d6a53c;
+  font-size: 24px;
+}
+
+.contact-socials-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+}
+
+.contact-social-person {
+  padding: 24px;
+  border: 1px solid #333;
+  border-radius: 8px;
+  background-color: #111;
+}
+
+.contact-social-person h4 {
+  margin-bottom: 20px;
+  color: #fff;
+  font-size: 20px;
+}
+
+.contact-social-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+}
+
+.contact-social-links a {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  border: 1px solid #444;
+  border-radius: 6px;
+  color: #ddd;
+  text-decoration: none;
+  transition:
+    border-color 0.2s ease,
+    color 0.2s ease;
+}
+
+.contact-social-links a:hover,
+.contact-social-links a:focus-visible {
+  border-color: #d6a53c;
+  color: #f3cf75;
+}
+
 /* =========================
    RESPONSIVO
 ========================= */
@@ -436,6 +549,10 @@ body {
   .profile-info div {
     min-width: 0;
   }
+
+  .contact-socials-grid {
+    grid-template-columns: 1fr;
+  }
 }
 /* =========================
    OBJETIVO CARD    
@@ -447,37 +564,37 @@ body {
   transition: 0.3s ease;
   color: white;
 }
-    .carousel-item {
-        min-height: 60vh;
-        clip-path: polygon(0 0, 100% 0, 100% 85%, 0 95%);
-    }
+.carousel-item {
+  min-height: 60vh;
+  clip-path: polygon(0 0, 100% 0, 100% 85%, 0 95%);
+}
 
 .back-to-top {
-    position: fixed;
-    bottom: 30px;
-    right: 30px;
-    font-size: 45px;
-    color: #b8bd1c;
-    transition: 0.3s ease;
-    z-index: 999;
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  font-size: 45px;
+  color: #b8bd1c;
+  transition: 0.3s ease;
+  z-index: 999;
 }
 
 .back-to-top:hover {
-    color: #9da415;
-    transform: translateY(-5px);
+  color: #9da415;
+  transform: translateY(-5px);
 }
 
 .objetivo-card {
-    background: #111;
-    border: 1px solid #333;
-    border-radius: 12px;
-    transition: 0.3s ease;
-    color: white;
+  background: #111;
+  border: 1px solid #333;
+  border-radius: 12px;
+  transition: 0.3s ease;
+  color: white;
 }
 
 .objetivo-card:hover {
-    transform: translateY(-5px);
-    border-color: #d6a53c;
+  transform: translateY(-5px);
+  border-color: #d6a53c;
 }
 
 .objetivo-card:hover {
@@ -508,13 +625,11 @@ body {
   html {
     scroll-behavior: auto;
   }
-
-
 }
 .btn-work {
-  background-color: #d6a53c ;
-  color: #000 ;
-  border: none ;
+  background-color: #d6a53c;
+  color: #000;
+  border: none;
   font-weight: bold;
   padding: 10px 25px;
   transition: 0.3s ease;
@@ -522,11 +637,10 @@ body {
 }
 
 .btn-work:hover {
-  background-color: #f3cf75 ;
-  color: #000 ;
+  background-color: #f3cf75;
+  color: #000;
   transform: translateY(-3px);
 }
-
 
 /* =========================
    BACK TO TOP BUTTON   
@@ -540,4 +654,3 @@ body {
   color: #f3cf75; /* dourado mais claro */
   transform: translateY(-5px);
 }
-
