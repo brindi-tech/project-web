@@ -91,14 +91,6 @@
             <a class="nav-link" href="#contactos">Contactos</a>
         </li>
 
-      <!-- Ícones redes sociais -->
-        <li class="nav-item d-flex align-items-center ms-lg-3 gap-3">
-            <a href="https://facebook.com" target="_blank"><i class="bi bi-facebook"></i></a>
-            <a href="https://instagram.com" target="_blank"><i class="bi bi-instagram"></i></a>
-            <a href="https://github.com" target="_blank"><i class="bi bi-github"></i></a>
-            <a href="https://linkedin.com" target="_blank"><i class="bi bi-linkedin"></i></a>
-        </li>
-
         </ul>
      </div>
     </nav>
@@ -190,7 +182,7 @@
             <h2 class="profile-name">Guilherme Menezes</h2>
 
             <p class="profile-description">
-              Aqui aparece toda a informação sobre mim.
+              Sou um estudante apaixonado por programação e desenvolvimento de software, sempre em busca de novos desafios e oportunidades para aprimorar minhas habilidades.
             </p>
 
             <div class="profile-info">
@@ -273,7 +265,7 @@
         <div class="profile">
         <h3 class="profile-name">Guilherme Menezes</h3>
         <p class="profile-description">
-            Aqui escrevemos uma breve descrição das competências do Guilherme.
+            Tenho experiência em programação, com conhecimento em várias linguagens e ferramentas.
         </p>
 
         <div class="profile-info">
@@ -367,6 +359,7 @@
         </div>
 
     </div>
+      </div>
 
     <!-- PROJETOS - WILKER -->
     <div class="profile">
@@ -413,23 +406,67 @@ Gosto de explorar diferentes áreas para compreender como posso aplicar o conhec
         <h2 class="profile-name">CONTACTOS</h2>
 
       <div class="contact-container">
-        <form class="contact-form">
-
-
+        <form class="contact-form" id="contact-form">
         <div class="mb-3">
-            <label class="form-label">Email</label>
-            <input type="email" class="form-control" placeholder="email@exemplo.com" required>
+          <label class="form-label" for="sender-email">O teu email</label>
+          <input type="email" class="form-control" id="sender-email" name="email" placeholder="email@exemplo.com" required>
         </div>
 
         <div class="mb-3">
-            <label class="form-label">Mensagem</label>
-            <textarea class="form-control" rows="5" placeholder="Escreve a tua mensagem..." required></textarea>
+          <label class="form-label" for="contact-message">Mensagem</label>
+          <textarea class="form-control" id="contact-message" name="message" rows="5" placeholder="Escreve a tua mensagem..." required></textarea>
         </div>
 
-        <button type="submit" class="contact-btn">Submit </button>
+        <div class="mb-3">
+          <label class="form-label" for="contact-recipient">Enviar para</label>
+          <select class="form-select" id="contact-recipient" name="recipient" required>
+            <option value="" selected disabled>Escolhe uma pessoa</option>
+            <option value="guimenezes1011@gmail.com">Guilherme Menezes</option>
+            <option value="celestinowilker@gmail.com">Wilker Celestino</option>
+          </select>
+        </div>
+
+        <button type="submit" class="contact-btn">Enviar email</button>
 
         </form>
       </div>
+        <div class="contact-socials">
+          <h3 class="contact-socials-title">REDES SOCIAIS</h3>
+          <div class="contact-socials-grid">
+            <section class="contact-social-person" aria-labelledby="guilherme-socials">
+              <h4 id="guilherme-socials">Guilherme Menezes</h4>
+              <div class="contact-social-links">
+                <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                  <i class="bi bi-instagram" aria-hidden="true"></i><span>Instagram</span>
+                </a>
+                <a href="https://github.com/brindi-tech" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+                  <i class="bi bi-github" aria-hidden="true"></i><span>GitHub</span>
+                </a>
+                <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                  <i class="bi bi-linkedin" aria-hidden="true"></i><span>LinkedIn</span>
+                </a>
+              </div>
+            </section>
+
+            <section class="contact-social-person" aria-labelledby="wilker-socials">
+              <h4 id="wilker-socials">Wilker Celestino</h4>
+              <div class="contact-social-links">
+                <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+                  <i class="bi bi-facebook" aria-hidden="true"></i><span>Facebook</span>
+                </a>
+                <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                  <i class="bi bi-instagram" aria-hidden="true"></i><span>Instagram</span>
+                </a>
+                <a href="https://github.com" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+                  <i class="bi bi-github" aria-hidden="true"></i><span>GitHub</span>
+                </a>
+                <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                  <i class="bi bi-linkedin" aria-hidden="true"></i><span>LinkedIn</span>
+                </a>
+              </div>
+            </section>
+          </div>
+        </div>
     </section>
 
     </main>
@@ -437,5 +474,19 @@ Gosto de explorar diferentes áreas para compreender como posso aplicar o conhec
         <i class="bi bi-arrow-up-circle-fill"></i>
     </a>
 
+        <script>
+          document.getElementById("contact-form").addEventListener("submit", (event) => {
+            event.preventDefault();
+
+            const form = event.currentTarget;
+            const recipient = form.elements.recipient.value;
+            const senderEmail = form.elements.email.value;
+            const message = form.elements.message.value;
+            const subject = encodeURIComponent("Contacto através do portfólio");
+            const body = encodeURIComponent(`Email: ${senderEmail}\n\n${message}`);
+
+            window.location.href = `mailto:${recipient}?subject=${subject}&body=${body}`;
+          });
+        </script>
   </body>
 </html>
