@@ -80,6 +80,16 @@ body {
   clip-path: polygon(0 0, 100% 0, 100% 85%, 0 95%);
 }
 
+#carrossel {
+  margin-bottom: 60px; 
+}
+
+
+.carousel-caption {
+  bottom: 25%; 
+}
+
+
 /* =========================
    HERO
 ========================= */
@@ -502,9 +512,9 @@ body {
 
 }
 .btn-work {
-  background-color: #d6a53c !important;
-  color: #000 !important;
-  border: none !important;
+  background-color: #d6a53c ;
+  color: #000 ;
+  border: none ;
   font-weight: bold;
   padding: 10px 25px;
   transition: 0.3s ease;
@@ -512,8 +522,8 @@ body {
 }
 
 .btn-work:hover {
-  background-color: #f3cf75 !important;
-  color: #000 !important;
+  background-color: #f3cf75 ;
+  color: #000 ;
   transform: translateY(-3px);
 }
 
