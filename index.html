@@ -44,9 +44,7 @@
     <nav id="navbar" class="navbar navbar-expand-lg navbar-dark bg-dark px-4">
       <a class="navbar-brand fw-bold" href="#"><span class="text-warning">OUR</span> PORTFOLIO </a>
       <details class="navbar-menu">
-        <summary>
-          Menu
-        </summary>
+        <summary>Menu</summary>
         <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
           <li class="nav-item">
             <a class="nav-link" href="#inicio">Início</a>
@@ -54,7 +52,6 @@
           <li class="nav-item">
             <a class="nav-link" href="#sobre">Sobre Nós</a>
           </li>
-          <!-- Submenu Bootstrap -->
           <li class="nav-item dropdown-css">
             <a class="nav-link" href="#competencias">Competências</a>
             <ul class="dropdown-menu-css">
@@ -69,18 +66,41 @@
         </ul>
       </details>
     </nav>
-    <section id="carrossel" class="carousel slide">
-      <div class="carousel-inner">
-        <div class="carousel-item active">
-          <div class="carousel-caption">
-            <h5>
-              Bem-vindo ao Nosso Portfólio
-            </h5>
-            <a href="#projetos" class="btn btn-work mt-3">Our Work</a>
-          </div>
-        </div>
+    <section id="carrossel" class="carrossel-css">
+  <input type="radio" name="slides" id="slide-1" checked>
+  <input type="radio" name="slides" id="slide-2">
+  <input type="radio" name="slides" id="slide-3">
+
+  <div class="slides">
+    <div class="slide slide-1">
+      <div class="carousel-caption-css">
+        <h5>Bem-vindo ao Nosso Portfólio</h5>
+        <p>Dois programadores, duas faces, uma história.</p>
+        <a href="#inicio" class="btn btn-work mt-3">Quem Somos?</a>
       </div>
-    </section>
+    </div>
+
+    <div class="slide slide-2">
+      <div class="carousel-caption-css">
+        <h5>Guilherme Menezes</h5>
+        <p>Programador apaixonado por tecnologia e inovação.</p>
+      </div>
+    </div>
+
+    <div class="slide slide-3">
+      <div class="carousel-caption-css">
+        <h5>Wilker Celestino</h5>
+        <p>Desenvolvedor com foco em criar experiências digitais.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="navigation">
+    <label for="slide-1" class="nav-button"><span class="visually-hidden">Slide 1</span></label>
+    <label for="slide-2" class="nav-button"><span class="visually-hidden">Slide 2</span></label>
+    <label for="slide-3" class="nav-button"><span class="visually-hidden">Slide 3</span></label>
+  </div>
+</section>
     <!-- =========================
          MAIN
     ========================== -->
@@ -248,14 +268,23 @@
             <h3 class="profile-name">
               Guilherme
             </h3>
-            <div class="carrossel-mini">
-              <span class="seta seta-prev">❮</span>
-              <div class="carousel-inner">
-                <div class="carousel-item active">
-                  <img src="images/GuilhermeM.jpeg" alt="Projeto Guilherme">
-                </div>
+            <div class="carrossel-mini project-carousel">
+              <input class="project-radio" type="radio" name="project-guilherme" id="project-guilherme-1" aria-label="Primeiro projeto do Guilherme" checked>
+              <input class="project-radio" type="radio" name="project-guilherme" id="project-guilherme-2" aria-label="Segundo projeto do Guilherme">
+              <div class="project-slides">
+                <div class="project-slide project-slide-1"><img src="images/Gprojeto2.jpeg" alt="Primeiro projeto do Guilherme"></div>
+                <div class="project-slide project-slide-2"><img src="images/Gprojeto3.jpeg" alt="Segundo projeto do Guilherme"></div>
               </div>
-              <span class="seta seta-next">❯</span>
+              <div class="project-arrow-controls">
+                <label class="project-arrow project-arrow-prev prev-1" for="project-guilherme-2" aria-label="Imagem anterior">&#10094;</label>
+                <label class="project-arrow project-arrow-next next-1" for="project-guilherme-2" aria-label="Imagem seguinte">&#10095;</label>
+                <label class="project-arrow project-arrow-prev prev-2" for="project-guilherme-1" aria-label="Imagem anterior">&#10094;</label>
+                <label class="project-arrow project-arrow-next next-2" for="project-guilherme-1" aria-label="Imagem seguinte">&#10095;</label>
+              </div>
+              <div class="project-dots">
+                <label for="project-guilherme-1" aria-label="Mostrar primeiro projeto do Guilherme"></label>
+                <label for="project-guilherme-2" aria-label="Mostrar segundo projeto do Guilherme"></label>
+              </div>
             </div>
           </div>
           <!-- Carrossel Wilker -->
@@ -264,13 +293,7 @@
               Wilker
             </h3>
             <div class="carrossel-mini">
-              <span class="seta seta-prev">❮</span>
-              <div class="carousel-inner">
-                <div class="carousel-item active">
-                  <img src="images/wprojeto.jpeg" alt="Projeto Wilker">
-                </div>
-              </div>
-              <span class="seta seta-next">❯</span>
+              <img src="images/wprojeto.jpeg" alt="Projeto do Wilker">
             </div>
           </div>
         </div>
@@ -373,12 +396,17 @@
                 <div class="mb-3">
                   <label class="form-label" for="contact-message">Mensagem</label><textarea class="form-control" id="contact-message" name="message" rows="5" placeholder="Escreve a tua mensagem..." required></textarea>
                 </div>
-                <div class="mb-3">
+                <div class="mb-3 contact-recipient-field">
                   <span class="form-label d-block">Enviar para</span>
-                  <div class="d-flex flex-wrap gap-2">
-                    <button type="submit" class="contact-btn">Guilherme Menezes</button><button type="submit" class="contact-btn" formaction="mailto:celestinowilker@gmail.com?subject=Contacto%20atraves%20do%20portfolio">Wilker Celestino</button>
+                  <div class="contact-recipient">
+                    <input class="contact-recipient-input" type="radio" id="recipient-guilherme" name="recipient" value="guilherme" checked required>
+                    <label class="contact-recipient-option" for="recipient-guilherme">Guilherme Menezes</label>
+                    <input class="contact-recipient-input" type="radio" id="recipient-wilker" name="recipient" value="wilker" required>
+                    <label class="contact-recipient-option" for="recipient-wilker">Wilker Celestino</label>
                   </div>
                 </div>
+                <button type="submit" class="contact-btn submit-guilherme">Enviar mensagem</button>
+                <button type="submit" class="contact-btn submit-wilker" formaction="mailto:celestinowilker@gmail.com?subject=Contacto%20atraves%20do%20portfolio">Enviar mensagem</button>
               </form>
             </div>
             <div class="contact-socials">
