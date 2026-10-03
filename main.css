@@ -161,19 +161,19 @@ body {
 .carrossel-css .slide-1 {
   background-image:
     linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)),
-    url("../images/circuitry-meets-gold-stockcake.jpg");
+    url("../images/slide1.jpg");
 }
 
 .carrossel-css .slide-2 {
   background-image:
     linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)),
-    url("../images/bitcoin-slips-as-capital-chases-chips-gold-and-silver.jpg");
+    url("../images/slide2.jpg");
 }
 
 .carrossel-css .slide-3 {
   background-image:
     linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)),
-    url("../images/pngtree-futuristic-black-and-gold-circuit-board-background-with-glowing-light-particles-image_21878394.jpg");
+    url("../images/slide3.jpg");
 }
 
 @media (min-width: 900px) and (min-height: 800px) {
