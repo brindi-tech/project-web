@@ -7,5 +7,10 @@ portfolio/
 │   └── main.css
 │
 └── images/
-    ├── colega1.png
-    └── colega2.png
+    ├── GuilhermeM.jpeg
+    ├── wilker.jpeg
+    ├── Gprojeto.jpeg
+    ├── wprojeto.jpeg
+    ├── slide1.jpg
+    ├── slide2.jpg
+    └── slide3.jpg
