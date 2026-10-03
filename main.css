@@ -120,174 +120,140 @@ body {
    CARROSSEL PRINCIPAL SEM JAVASCRIPT
 ========================= */
 
-#carrossel {
-  margin-bottom: 60px;
+.portfolio-carousel {
+  background-color: #111;
 }
 
-.carrossel-css {
+.portfolio-carousel .carousel-inner {
+  clip-path: polygon(0 0, 100% 0, 100% 85%, 0 95%);
+}
+
+.portfolio-carousel .carousel-item {
   position: relative;
-  width: 100%;
-  min-height: 500px;
-  overflow: hidden;
-  background: #000;
-}
-
-.carrossel-css input {
-  display: none;
-}
-
-.carrossel-css .slides {
-  position: relative;
-  width: 100%;
+  height: min(85vh, 850px);
   min-height: 500px;
 }
 
-.carrossel-css .slide {
+.portfolio-carousel .carousel-item img {
   position: absolute;
   inset: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  opacity: 0;
-  visibility: hidden;
-  transition:
-    opacity 0.4s ease,
-    visibility 0.4s ease;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
 }
 
-.carrossel-css .slide-1 {
-  background-image:
-    linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)),
-    url("../images/slide1.jpg");
+/* Faixa escura para destacar o texto */
+.portfolio-carousel .carousel-item::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    rgba(0, 0, 0, 0.82) 0%,
+    rgba(0, 0, 0, 0.55) 45%,
+    rgba(0, 0, 0, 0.08) 100%
+  );
 }
 
-.carrossel-css .slide-2 {
-  background-image:
-    linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)),
-    url("../images/slide2.jpg");
-}
-
-.carrossel-css .slide-3 {
-  background-image:
-    linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)),
-    url("../images/slide3.jpg");
-}
-
-@media (min-width: 900px) and (min-height: 800px) {
-  .carrossel-css {
-    height: min(78vh, 900px);
-  }
-
-  .carrossel-css .slides {
-    height: 100%;
-  }
-
-  .carrossel-css .slide-2,
-  .carrossel-css .slide-3 {
-    background-color: #000;
-    background-size:
-      100% 100%,
-      contain;
-  }
-}
-
-#slide-1:checked ~ .slides .slide-1,
-#slide-2:checked ~ .slides .slide-2,
-#slide-3:checked ~ .slides .slide-3 {
-  opacity: 1;
-  visibility: visible;
-}
-
-.carousel-caption-css {
-  text-align: center;
-  padding: 40px 20px;
-}
-
-.carousel-caption-css h5 {
-  margin-bottom: 12px;
-  font-size: clamp(1.7rem, 3vw, 3rem);
-  font-weight: 700;
+.portfolio-caption {
+  position: absolute;
+  z-index: 2;
+  top: 50%;
+  left: clamp(2rem, 10vw, 9rem);
+  right: 10%;
+  width: min(70%, 720px);
+  transform: translateY(-50%);
   color: #fff;
+  text-align: left;
 }
 
-.carousel-caption-css p {
-  margin-bottom: 18px;
-  font-size: clamp(1rem, 1.5vw, 1.2rem);
-  color: rgba(255, 255, 255, 0.85);
-}
-
-.carousel-caption-css .btn-work {
+.portfolio-tag {
   display: inline-block;
-  margin: 0 auto;
-}
-
-.carrossel-css .navigation {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 14px;
-  margin-top: 14px;
-  padding-bottom: 10px;
-}
-
-.carrossel-css .nav-button {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 28px;
-  height: 28px;
-  padding: 0;
-  border-radius: 50%;
-  border: 2px solid #d6a53c;
-  background: rgba(214, 165, 60, 0.1);
-  color: #d6a53c;
+  margin-bottom: 1rem;
+  color: #f3cf75;
+  font-size: 0.85rem;
   font-weight: 700;
-  cursor: pointer;
-  transition: all 0.25s ease;
-  user-select: none;
+  letter-spacing: 0.18rem;
 }
 
-.carrossel-css .nav-button:hover {
-  background: #d6a53c;
-  color: #000;
+.portfolio-caption h1,
+.portfolio-caption h2 {
+  margin-bottom: 1rem;
+  color: #fff;
+  font-size: clamp(2.2rem, 5vw, 4.5rem);
+  font-weight: 700;
 }
 
-#slide-1:checked ~ .navigation label[for="slide-1"],
-#slide-2:checked ~ .navigation label[for="slide-2"],
-#slide-3:checked ~ .navigation label[for="slide-3"] {
-  background: #d6a53c;
-  color: #000;
-  box-shadow: 0 0 0 3px rgba(214, 165, 60, 0.2);
+.portfolio-caption p {
+  max-width: 560px;
+  margin-bottom: 1.5rem;
+  color: rgba(255, 255, 255, 0.9);
+  font-size: clamp(1rem, 2vw, 1.25rem);
 }
-
-/* =========================
-   BOTÃO OUR WORK
-========================= */
 
 .btn-work {
+  padding: 0.75rem 1.5rem;
+  border: 2px solid #d6a53c;
+  border-radius: 4px;
   background-color: #d6a53c;
-  color: #000;
-
-  border: none;
-  border-radius: 6px;
-
-  font-weight: bold;
-
-  padding: 10px 25px;
-
+  color: #111;
+  font-weight: 700;
   text-decoration: none;
-
-  transition: 0.3s ease;
+  transition: background-color 0.25s ease, transform 0.25s ease;
 }
 
 .btn-work:hover {
-  background-color: #f3cf75;
-  color: #000;
-
   transform: translateY(-3px);
+  border-color: #f3cf75;
+  background-color: #f3cf75;
+  color: #111;
+}
+
+.portfolio-carousel .carousel-indicators {
+  z-index: 3;
+  bottom: 2.5rem;
+}
+
+.portfolio-carousel .carousel-indicators button {
+  width: 30px;
+  height: 5px;
+  margin: 0 5px;
+  border: 0;
+  border-radius: 5px;
+  background-color: rgba(255, 255, 255, 0.55);
+}
+
+.portfolio-carousel .carousel-indicators button.active {
+  background-color: #d6a53c;
+}
+
+.portfolio-carousel .carousel-control-prev,
+.portfolio-carousel .carousel-control-next {
+  z-index: 3;
+  width: 8%;
+}
+
+@media (max-width: 576px) {
+  .portfolio-carousel .carousel-item {
+    height: 65vh;
+    min-height: 420px;
+  }
+
+  .portfolio-carousel .carousel-inner {
+    clip-path: polygon(0 0, 100% 0, 100% 92%, 0 96%);
+  }
+
+  .portfolio-caption {
+    left: 1.5rem;
+    right: 1.5rem;
+    width: auto;
+  }
+
+  .portfolio-carousel .carousel-control-prev,
+  .portfolio-carousel .carousel-control-next {
+    width: 12%;
+  }
 }
 
 /* =========================
@@ -645,8 +611,7 @@ body {
   color: #d6a53c;
 }
 
-.contact-form .form-control,
-.contact-form .form-select {
+.contact-form .form-control {
   background-color: #111;
 
   border-color: #444;
@@ -658,16 +623,10 @@ body {
   color: #999;
 }
 
-.contact-form .form-control:focus,
-.contact-form .form-select:focus {
+.contact-form .form-control:focus {
   border-color: #d6a53c;
 
   box-shadow: 0 0 0 0.2rem rgba(214, 165, 60, 0.2);
-}
-
-.contact-form .form-select option {
-  background-color: #111;
-  color: #fff;
 }
 
 .contact-recipient {
@@ -836,16 +795,6 @@ body {
   color: #f3cf75;
 }
 
-.social-nav a {
-  color: white;
-
-  transition: color 0.3s ease;
-}
-
-.social-nav a:hover {
-  color: #d6a53c;
-}
-
 /* =========================
    BOTÃO VOLTAR AO TOPO
 ========================= */
@@ -927,6 +876,11 @@ body {
 
   .btn-work {
     padding: 8px 16px;
+  }
+
+  .portfolio-carousel .carousel-item {
+    height: 70vh;
+    min-height: 460px;
   }
 
   .carrosseis-duplos {
@@ -1080,6 +1034,13 @@ body {
     max-width: 100%;
 
     padding: 10px 16px;
+  }
+}
+
+@media (max-width: 576px) {
+  .portfolio-carousel .carousel-item {
+    height: 65vh;
+    min-height: 420px;
   }
 }
 
