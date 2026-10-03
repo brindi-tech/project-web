@@ -35,7 +35,7 @@
     <!-- =========================
          MAIN CSS
     ========================== -->
-    <link rel="stylesheet" href="css/main.css" />
+     <link rel="stylesheet" href="css/main.css" />
   </head>
   <body>
     <!-- =========================
@@ -52,10 +52,8 @@
           <li class="nav-item">
             <a class="nav-link" href="#sobre">Sobre Nós</a>
           </li>
-          <li class="nav-item dropdown-css">
+          <li class="nav-item">
             <a class="nav-link" href="#competencias">Competências</a>
-            <ul class="dropdown-menu-css">
-            </ul>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#projetos">Projetos</a>
@@ -66,45 +64,95 @@
         </ul>
       </details>
     </nav>
-    <section id="carrossel" class="carrossel-css">
-  <input type="radio" name="slides" id="slide-1" checked>
-  <input type="radio" name="slides" id="slide-2">
-  <input type="radio" name="slides" id="slide-3">
-
-  <div class="slides">
-    <div class="slide slide-1">
-      <div class="carousel-caption-css">
-        <h5>Bem-vindo ao Nosso Portfólio</h5>
-        <p>Dois programadores, duas faces, uma história.</p>
-        <a href="#inicio" class="btn btn-work mt-3">Quem Somos?</a>
-      </div>
-    </div>
-
-    <div class="slide slide-2">
-      <div class="carousel-caption-css">
-        <h5>Guilherme Menezes</h5>
-        <p>Programador apaixonado por tecnologia e inovação.</p>
-      </div>
-    </div>
-
-    <div class="slide slide-3">
-      <div class="carousel-caption-css">
-        <h5>Wilker Celestino</h5>
-        <p>Desenvolvedor com foco em criar experiências digitais.</p>
-      </div>
-    </div>
-  </div>
-
-  <div class="navigation">
-    <label for="slide-1" class="nav-button"><span class="visually-hidden">Slide 1</span></label>
-    <label for="slide-2" class="nav-button"><span class="visually-hidden">Slide 2</span></label>
-    <label for="slide-3" class="nav-button"><span class="visually-hidden">Slide 3</span></label>
-  </div>
-</section>
     <!-- =========================
-         MAIN
+         CONTEÚDO PRINCIPAL
     ========================== -->
     <main>
+      <section id="carrossel" aria-label="Portfólio">
+  <div id="portfolioCarousel"
+       class="carousel slide portfolio-carousel"
+       data-bs-ride="carousel">
+
+    <div class="carousel-indicators">
+      <button type="button"
+              data-bs-target="#portfolioCarousel"
+              data-bs-slide-to="0"
+              class="active"
+              aria-current="true"
+              aria-label="Mostrar primeiro slide"></button>
+
+      <button type="button"
+              data-bs-target="#portfolioCarousel"
+              data-bs-slide-to="1"
+              aria-label="Mostrar segundo slide"></button>
+
+      <button type="button"
+              data-bs-target="#portfolioCarousel"
+              data-bs-slide-to="2"
+              aria-label="Mostrar terceiro slide"></button>
+    </div>
+
+    <div class="carousel-inner">
+
+      <div class="carousel-item active">
+        <img src="images/slide1.jpg"
+             class="d-block w-100"
+             alt="Imagem de apresentação do portfólio">
+
+        <div class="portfolio-caption">
+          <span class="portfolio-tag">O NOSSO TRABALHO</span>
+          <h1>Bem-vindo ao nosso portfólio</h1>
+          <p>Dois programadores, duas faces, uma história.</p>
+          <a href="#inicio" class="btn btn-work">Quem somos?</a>
+        </div>
+      </div>
+
+      <div class="carousel-item">
+        <img src="images/slide2.jpg"
+             class="d-block w-100"
+             alt="Imagem de Guilherme Menezes">
+
+        <div class="portfolio-caption">
+          <span class="portfolio-tag">CONHECE A EQUIPA</span>
+          <h2>Guilherme Menezes</h2>
+          <p>Programador apaixonado por tecnologia e inovação.</p>
+          <a href="#sobre" class="btn btn-work">Saber mais</a>
+        </div>
+      </div>
+
+      <div class="carousel-item">
+        <img src="images/slide3.jpg"
+             class="d-block w-100"
+             alt="Imagem de Wilker Celestino">
+
+        <div class="portfolio-caption">
+          <span class="portfolio-tag">CONHECE A EQUIPA</span>
+          <h2>Wilker Celestino</h2>
+          <p>Desenvolvedor com foco em criar experiências digitais.</p>
+          <a href="#sobre" class="btn btn-work">Saber mais</a>
+        </div>
+      </div>
+
+    </div>
+
+    <button class="carousel-control-prev"
+            type="button"
+            data-bs-target="#portfolioCarousel"
+            data-bs-slide="prev"
+            aria-label="Slide anterior">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    </button>
+
+    <button class="carousel-control-next"
+            type="button"
+            data-bs-target="#portfolioCarousel"
+            data-bs-slide="next"
+            aria-label="Próximo slide">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    </button>
+
+  </div>
+      </section>
       <!-- =========================
              HERO
         ========================== -->
@@ -156,7 +204,7 @@
           <!-- =========================
                      MEU PERFIL
                 ========================== -->
-          <div class="profile profile-me">
+          <div class="profile">
             <h2 class="profile-name">
               Guilherme Menezes
             </h2>
@@ -181,7 +229,7 @@
           <!-- =========================
                      PERFIL DO COLEGA
                 ========================== -->
-          <div class="profile profile-colleague">
+          <div class="profile">
             <h2 class="profile-name">
               Wilker Celestino
             </h2>
@@ -365,7 +413,7 @@
               </div>
             </div>
           </div>
-          </section>
+        </section>
           <!-- =========================
              CONTACTOS
         ========================== -->
@@ -374,12 +422,33 @@
               CONTACTOS
             </h2>
             <div class="contact-container">
-              <form class="contact-form" action="mailto:guimenezes1011@gmail.com?subject=Contacto%20atraves%20do%20portfolio" method="post" enctype="text/plain">
+              <form
+                class="contact-form"
+                action="mailto:guimenezes1011@gmail.com?subject=Contacto%20atraves%20do%20portfolio"
+                method="post"
+                enctype="text/plain"
+              >
                 <div class="mb-3">
-                  <label class="form-label" for="sender-email">O teu email</label><input type="email" class="form-control" id="sender-email" name="email" placeholder="email@exemplo.com" required>
+                  <label class="form-label" for="sender-email">O teu email</label>
+                  <input
+                    type="email"
+                    class="form-control"
+                    id="sender-email"
+                    name="email"
+                    placeholder="email@exemplo.com"
+                    required
+                  >
                 </div>
                 <div class="mb-3">
-                  <label class="form-label" for="contact-message">Mensagem</label><textarea class="form-control" id="contact-message" name="message" rows="5" placeholder="Escreve a tua mensagem..." required></textarea>
+                  <label class="form-label" for="contact-message">Mensagem</label>
+                  <textarea
+                    class="form-control"
+                    id="contact-message"
+                    name="message"
+                    rows="5"
+                    placeholder="Escreve a tua mensagem..."
+                    required
+                  ></textarea>
                 </div>
                 <div class="mb-3 contact-recipient-field">
                   <span class="form-label d-block">Enviar para</span>
@@ -391,7 +460,11 @@
                   </div>
                 </div>
                 <button type="submit" class="contact-btn submit-guilherme">Enviar mensagem</button>
-                <button type="submit" class="contact-btn submit-wilker" formaction="mailto:celestinowilker@gmail.com?subject=Contacto%20atraves%20do%20portfolio">Enviar mensagem</button>
+                <button
+                  type="submit"
+                  class="contact-btn submit-wilker"
+                  formaction="mailto:celestinowilker@gmail.com?subject=Contacto%20atraves%20do%20portfolio"
+                >Enviar mensagem</button>
               </form>
             </div>
             <div class="contact-socials">
@@ -404,7 +477,18 @@
                     Guilherme Menezes
                   </h4>
                   <div class="contact-social-links">
-                    <a href="https://instagram.com/brindi_pt" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="bi bi-instagram" aria-hidden="true"></i><span>Instagram</span></a><a href="https://github.com/brindi-tech" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="bi bi-github" aria-hidden="true"></i><span>GitHub</span></a><a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="bi bi-linkedin" aria-hidden="true"></i><span>LinkedIn</span></a>
+                    <a href="https://instagram.com/brindi_pt" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                      <i class="bi bi-instagram" aria-hidden="true"></i>
+                      <span>Instagram</span>
+                    </a>
+                    <a href="https://github.com/brindi-tech" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+                      <i class="bi bi-github" aria-hidden="true"></i>
+                      <span>GitHub</span>
+                    </a>
+                    <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                      <i class="bi bi-linkedin" aria-hidden="true"></i>
+                      <span>LinkedIn</span>
+                    </a>
                   </div>
                 </section>
                 <section class="contact-social-person" aria-labelledby="wilker-socials">
@@ -412,13 +496,24 @@
                     Wilker Celestino
                   </h4>
                   <div class="contact-social-links">
-                    <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="bi bi-instagram" aria-hidden="true"></i><span>Instagram</span></a><a href="https://github.com" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="bi bi-github" aria-hidden="true"></i><span>GitHub</span></a><a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="bi bi-linkedin" aria-hidden="true"></i><span>LinkedIn</span></a>
+                    <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                      <i class="bi bi-instagram" aria-hidden="true"></i>
+                      <span>Instagram</span>
+                    </a>
+                    <a href="https://github.com" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+                      <i class="bi bi-github" aria-hidden="true"></i>
+                      <span>GitHub</span>
+                    </a>
+                    <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                      <i class="bi bi-linkedin" aria-hidden="true"></i>
+                      <span>LinkedIn</span>
+                    </a>
                   </div>
                 </section>
               </div>
             </div>
           </section>
-          </main>
-          <a href="#navbar" class="back-to-top"><i class="bi bi-arrow-up-circle-fill"></i></a>
-          </body>
-          </html>
+    </main>
+    <a href="#navbar" class="back-to-top"><i class="bi bi-arrow-up-circle-fill"></i></a>
+  </body>
+</html>
