@@ -48,30 +48,6 @@ body {
   z-index: 10;
 }
 
-.logo {
-  font-size: 22px;
-  font-weight: bold;
-}
-
-.logo span {
-  color: #d6a53c;
-}
-
-.nav-links {
-  display: flex;
-  gap: 40px;
-}
-
-.nav-links a {
-  color: white;
-  text-decoration: none;
-  transition: color 0.3s ease;
-}
-
-.nav-links a:hover {
-  color: #d6a53c;
-}
-
 .navbar-menu {
   margin-left: auto;
   position: relative;
@@ -191,13 +167,13 @@ body {
 .carrossel-css .slide-2 {
   background-image:
     linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)),
-    url("../images/GuilhermeM.jpeg");
+    url("../images/bitcoin-slips-as-capital-chases-chips-gold-and-silver.jpg");
 }
 
 .carrossel-css .slide-3 {
   background-image:
     linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)),
-    url("../images/wilker.jpeg");
+    url("../images/pngtree-futuristic-black-and-gold-circuit-board-background-with-glowing-light-particles-image_21878394.jpg");
 }
 
 @media (min-width: 900px) and (min-height: 800px) {
@@ -287,197 +263,6 @@ body {
   box-shadow: 0 0 0 3px rgba(214, 165, 60, 0.2);
 }
 
-.hero-carousel {
-  position: relative;
-
-  width: 100%;
-  height: clamp(280px, 60vh, 620px);
-
-  overflow: hidden;
-
-  clip-path: polygon(0 0, 100% 0, 100% 85%, 0 95%);
-}
-
-/* Esconde os radio buttons */
-.hero-carousel input {
-  display: none;
-}
-
-/* Faixa que contém todos os slides */
-.hero-carousel-track {
-  display: flex;
-
-  width: 300%;
-  height: 100%;
-
-  transition: transform 0.6s ease;
-}
-
-/* Cada slide */
-.hero-carousel-slide {
-  position: relative;
-
-  width: 33.333%;
-  height: 100%;
-
-  flex-shrink: 0;
-
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-}
-
-/* Imagens dos slides */
-.hero-carousel-slide-1 {
-  background-image:
-    linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)),
-    url("../images/GuilhermeM.jpeg");
-}
-
-.hero-carousel-slide-2 {
-  background-image:
-    linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)),
-    url("../images/wilker.jpeg");
-}
-
-.hero-carousel-slide-3 {
-  background-image:
-    linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)),
-    url("../images/gprojeto.jpeg");
-}
-
-/* Movimento do carrossel */
-#hero-slide-1:checked ~ .hero-carousel-track {
-  transform: translateX(0);
-}
-
-#hero-slide-2:checked ~ .hero-carousel-track {
-  transform: translateX(-33.333%);
-}
-
-#hero-slide-3:checked ~ .hero-carousel-track {
-  transform: translateX(-66.666%);
-}
-
-/* Texto do carrossel */
-.hero-carousel-caption {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-
-  width: min(90%, 900px);
-
-  transform: translate(-50%, -50%);
-
-  text-align: center;
-  color: white;
-
-  z-index: 2;
-}
-
-.hero-carousel-caption h5 {
-  margin-bottom: 15px;
-
-  color: white;
-
-  font-size: clamp(28px, 5vw, 60px);
-  font-weight: bold;
-}
-
-.hero-carousel-caption p {
-  margin-bottom: 20px;
-
-  color: #ddd;
-
-  font-size: clamp(15px, 2vw, 22px);
-}
-
-/* Setas do carrossel */
-.hero-carousel-arrows {
-  position: absolute;
-  top: 50%;
-  left: 0;
-
-  width: 100%;
-
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-
-  padding: 0 35px;
-
-  transform: translateY(-50%);
-
-  z-index: 3;
-}
-
-.hero-arrow {
-  width: 46px;
-  height: 46px;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  border: 2px solid rgba(255, 255, 255, 0.8);
-  border-radius: 50%;
-
-  background: rgba(0, 0, 0, 0.35);
-  color: white;
-
-  font-size: 28px;
-  font-weight: bold;
-
-  cursor: pointer;
-  user-select: none;
-
-  transition: 0.3s ease;
-}
-
-.hero-arrow:hover {
-  background: #d6a53c;
-  border-color: #d6a53c;
-  color: #000;
-}
-
-/* Bolinhas do carrossel */
-.hero-carousel-dots {
-  position: absolute;
-  bottom: 55px;
-  left: 50%;
-
-  display: flex;
-  gap: 12px;
-
-  transform: translateX(-50%);
-
-  z-index: 4;
-}
-
-.hero-carousel-dots label {
-  width: 14px;
-  height: 14px;
-
-  border: 2px solid white;
-  border-radius: 50%;
-
-  cursor: pointer;
-
-  transition: 0.3s ease;
-}
-
-.hero-carousel-dots label:hover {
-  background: white;
-}
-
-/* Bolinha ativa */
-#hero-slide-1:checked ~ .hero-carousel-dots label:nth-child(1),
-#hero-slide-2:checked ~ .hero-carousel-dots label:nth-child(2),
-#hero-slide-3:checked ~ .hero-carousel-dots label:nth-child(3) {
-  background: #d6a53c;
-  border-color: #d6a53c;
-}
-
 /* =========================
    BOTÃO OUR WORK
 ========================= */
@@ -535,34 +320,6 @@ body {
   padding: 0;
 }
 
-.project-slides {
-  position: relative;
-  width: 100%;
-  height: 100%;
-}
-
-.project-radio {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  margin: -1px;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  white-space: nowrap;
-  border: 0;
-}
-
-.project-slide {
-  position: absolute;
-  inset: 0;
-  opacity: 0;
-  visibility: hidden;
-  transition:
-    opacity 0.35s ease,
-    visibility 0.35s ease;
-}
-
-.project-slide img,
 .carrossel-mini > img,
 .carrosseis-duplos img {
   width: 100%;
@@ -571,110 +328,6 @@ body {
   object-fit: cover;
 
   border-radius: 6px;
-}
-
-#project-guilherme-1:checked ~ .project-slides .project-slide-1,
-#project-guilherme-2:checked ~ .project-slides .project-slide-2 {
-  opacity: 1;
-  visibility: visible;
-}
-
-.project-arrow-controls {
-  position: absolute;
-  inset: 0;
-  z-index: 2;
-  pointer-events: none;
-}
-
-.project-arrow {
-  position: absolute;
-  top: 50%;
-  display: none;
-  width: 42px;
-  height: 42px;
-  align-items: center;
-  justify-content: center;
-  transform: translateY(-50%);
-  border: 1px solid rgba(255, 255, 255, 0.6);
-  border-radius: 50%;
-  background: rgba(0, 0, 0, 0.55);
-  color: #fff;
-  cursor: pointer;
-  pointer-events: auto;
-  transition:
-    background-color 0.2s ease,
-    color 0.2s ease;
-}
-
-.project-arrow:hover {
-  background: #d6a53c;
-  color: #000;
-}
-
-.project-arrow-prev {
-  left: 12px;
-}
-
-.project-arrow-next {
-  right: 12px;
-}
-
-#project-guilherme-1:checked ~ .project-arrow-controls .prev-1,
-#project-guilherme-1:checked ~ .project-arrow-controls .next-1,
-#project-guilherme-2:checked ~ .project-arrow-controls .prev-2,
-#project-guilherme-2:checked ~ .project-arrow-controls .next-2 {
-  display: flex;
-}
-
-.project-dots {
-  position: absolute;
-  bottom: 12px;
-  left: 50%;
-  z-index: 3;
-  display: flex;
-  gap: 9px;
-  transform: translateX(-50%);
-}
-
-.project-dots label {
-  display: block;
-  width: 12px;
-  height: 12px;
-  border: 2px solid #fff;
-  border-radius: 50%;
-  cursor: pointer;
-}
-
-#project-guilherme-1:checked ~ .project-dots label[for="project-guilherme-1"],
-#project-guilherme-2:checked ~ .project-dots label[for="project-guilherme-2"] {
-  border-color: #d6a53c;
-  background: #d6a53c;
-}
-
-#project-guilherme-1:focus-visible
-  ~ .project-dots
-  label[for="project-guilherme-1"],
-#project-guilherme-2:focus-visible
-  ~ .project-dots
-  label[for="project-guilherme-2"] {
-  outline: 2px solid #f3cf75;
-  outline-offset: 3px;
-}
-
-.seta {
-  font-size: 32px;
-  color: #d6a53c;
-
-  opacity: 0.9;
-
-  user-select: none;
-  cursor: default;
-
-  transition: 0.3s ease;
-}
-
-.seta:hover {
-  color: #f3cf75;
 }
 
 /* =========================
@@ -1272,41 +925,6 @@ body {
     flex-wrap: wrap;
   }
 
-  .logo {
-    font-size: 19px;
-  }
-
-  .hero-carousel {
-    height: clamp(240px, 46vh, 380px);
-  }
-
-  .hero-carousel-caption {
-    width: 85%;
-  }
-
-  .hero-carousel-caption h5 {
-    font-size: 24px;
-  }
-
-  .hero-carousel-caption p {
-    font-size: 14px;
-  }
-
-  .hero-carousel-arrows {
-    padding: 0 15px;
-  }
-
-  .hero-arrow {
-    width: 38px;
-    height: 38px;
-
-    font-size: 22px;
-  }
-
-  .hero-carousel-dots {
-    bottom: 35px;
-  }
-
   .btn-work {
     padding: 8px 16px;
   }
@@ -1474,9 +1092,6 @@ body {
     scroll-behavior: auto;
   }
 
-  .hero-carousel-track,
-  .hero-arrow,
-  .hero-carousel-dots label,
   .btn-work,
   .profile-info > div,
   .objetivo-card,
